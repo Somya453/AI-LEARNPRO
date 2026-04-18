@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Learning Quests - AI LearnPro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="topbar">
+            <button id="sidebarToggle" class="hamburger">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <a href="index.html" class="brand">
+                <span class="brand-icon">🤖</span>
+                AI LearnPro
+            </a>
+            <div class="top-actions">
+                <a href="login.html" class="button">Login</a>
+                <a href="register.html" class="button primary">Start Learning</a>
+                <button id="logoutBtn" class="button">Logout</button>
+            </div>
+        </div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <button id="sidebarClose" class="sidebar-close" aria-label="Close sidebar">×</button>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item">
+                <span class="nav-icon">🏠</span>Home
+            </a>
+            <a href="courses.html" class="nav-item">
+                <span class="nav-icon">📚</span>Courses
+            </a>
+            <a href="paths.html" class="nav-item">
+                <span class="nav-icon">🛤️</span>Learning Paths
+            </a>
+            <a href="ai.html" class="nav-item active">
+                <span class="nav-icon">🧠</span>AI Quests
+            </a>
+            <a href="tutor.html" class="nav-item">
+                <span class="nav-icon">👨‍🏫</span>AI Tutor
+            </a>
+            <a href="community.html" class="nav-item">
+                <span class="nav-icon">👥</span>Community
+            </a>
+            <a href="analytics.html" class="nav-item">
+                <span class="nav-icon">📊</span>Analytics
+            </a>
+            <a href="dashboard.html" class="nav-item">
+                <span class="nav-icon">📈</span>Dashboard
+            </a>
+        </nav>
+    </aside>
+    <div class="backdrop" id="sidebarBackdrop"></div>
+
+    <main>
+        <section class="hero">
+            <div class="quest-header">
+                <h1>🧠 AI Learning Quests</h1>
+                <p>Embark on interactive adventures to master artificial intelligence through gamified challenges</p>
+                <div class="quest-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="currentScore">0</div>
+                            <div class="stat-label">Current Score</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="currentStreak">0</div>
+                            <div class="stat-label">Answer Streak</div>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎯</div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="accuracyRate">0%</div>
+                            <div class="stat-label">Accuracy</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quest-modes">
+            <div class="mode-grid">
+                <div class="mode-card" onclick="startQuest('basics')">
+                    <div class="mode-icon">🎓</div>
+                    <h3>AI Basics Quest</h3>
+                    <p>Learn fundamental AI concepts through interactive challenges</p>
+                    <div class="mode-difficulty">
+                        <span class="difficulty-badge easy">Easy</span>
+                    </div>
+                    <div class="mode-reward">+25 XP per correct answer</div>
+                </div>
+                <div class="mode-card" onclick="startQuest('ml')">
+                    <div class="mode-icon">⚡</div>
+                    <h3>ML Mastery Challenge</h3>
+                    <p>Test your machine learning knowledge in this competitive arena</p>
+                    <div class="mode-difficulty">
+                        <span class="difficulty-badge medium">Medium</span>
+                    </div>
+                    <div class="mode-reward">+50 XP per correct answer</div>
+                </div>
+                <div class="mode-card" onclick="startQuest('advanced')">
+                    <div class="mode-icon">🚀</div>
+                    <h3>Advanced AI Odyssey</h3>
+                    <p>Push your limits with complex AI and deep learning questions</p>
+                    <div class="mode-difficulty">
+                        <span class="difficulty-badge hard">Hard</span>
+                    </div>
+                    <div class="mode-reward">+100 XP per correct answer</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="quiz-section">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <div class="question-counter">
+                        <span id="currentQuestionNum">1</span> / <span id="totalQuestions">10</span>
+                    </div>
+                    <div class="timer">
+                        <div class="timer-icon">⏱️</div>
+                        <div class="timer-text" id="timer">30</div>
+                    </div>
+                </div>
+
+                <div class="question-card" id="questionCard">
+                    <div class="question-category" id="questionCategory">Loading...</div>
+                    <h2 id="question">Preparing your quest...</h2>
+                    <div class="question-hint" id="questionHint"></div>
+                </div>
+
+                <div class="options-grid" id="options">
+                    <!-- Options will be populated by JavaScript -->
+                </div>
+
+                <div class="quiz-actions">
+                    <button id="nextBtn" class="action-btn primary" style="display: none;">Next Question</button>
+                    <button id="hintBtn" class="action-btn secondary">Get Hint (-10 XP)</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="result" style="display:none;" class="result-section">
+            <div class="result-card">
+                <div class="result-header">
+                    <h2>Quest Complete! 🎉</h2>
+                    <div class="final-score">
+                        <div class="score-display">
+                            <span class="score-number" id="finalScore">0</span>
+                            <span class="score-total">/ 10</span>
+                        </div>
+                        <div class="score-percentage" id="scorePercentage">0%</div>
+                    </div>
+                </div>
+
+                <div class="result-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-value" id="resultStreak">0</div>
+                        <div class="stat-label">Best Streak</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-value" id="avgTime">0s</div>
+                        <div class="stat-label">Avg Time</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">🏆</div>
+                        <div class="stat-value" id="xpEarned">0</div>
+                        <div class="stat-label">XP Earned</div>
+                    </div>
+                </div>
+
+                <div class="result-feedback" id="resultFeedback">
+                    <p>Great effort! Keep practicing to improve your AI knowledge.</p>
+                </div>
+
+                <div class="result-actions">
+                    <button onclick="restartQuest()" class="action-btn primary">Try Again</button>
+                    <button onclick="changeDifficulty()" class="action-btn secondary">Change Difficulty</button>
+                    <a href="tutor.html" class="action-btn outline">Get AI Help</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="achievements-section">
+            <h2>Recent Achievements 🏅</h2>
+            <div class="achievements-grid" id="achievements">
+                <div class="achievement-card locked">
+                    <div class="achievement-icon">🎯</div>
+                    <div class="achievement-info">
+                        <h4>Perfect Score</h4>
+                        <p>Get 100% on any quest</p>
+                    </div>
+                </div>
+                <div class="achievement-card locked">
+                    <div class="achievement-icon">⚡</div>
+                    <div class="achievement-info">
+                        <h4>Speed Demon</h4>
+                        <p>Complete a quest in under 5 minutes</p>
+                    </div>
+                </div>
+                <div class="achievement-card locked">
+                    <div class="achievement-icon">🔥</div>
+                    <div class="achievement-info">
+                        <h4>Streak Master</h4>
+                        <p>Get 10 correct answers in a row</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>

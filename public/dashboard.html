@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - AI LearnPro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="topbar">
+            <button id="sidebarToggle" class="hamburger" aria-label="Open sidebar">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <a href="index.html" class="brand">AI LearnPro</a>
+            <div class="top-actions">
+                <a href="login.html" class="button">Login</a>
+                <a href="register.html" class="button primary">Register</a>
+                <button id="logoutBtn" class="button">Logout</button>
+            </div>
+        </div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <button id="sidebarClose" class="sidebar-close" aria-label="Close sidebar">×</button>
+        <nav class="sidebar-nav">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="paths.html">Learning Paths</a>
+            <a href="ai.html">AI Learning</a>
+            <a href="tutor.html">AI Tutor</a>
+            <a href="community.html">Community</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+    </aside>
+    <div class="backdrop" id="sidebarBackdrop"></div>
+    <main>
+        <section class="hero">
+            <h2>Learning Dashboard</h2>
+            <p>Track your performance, view mastery heatmaps, and see achievement progress.</p>
+        </section>
+        <div id="userInfo"></div>
+        <div class="grid">
+            <div class="stat-card">
+                <h3>Current Progress</h3>
+                <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+                <p><strong>Completion:</strong> <span id="progress-text">0%</span></p>
+            </div>
+            <div class="stat-card">
+                <h3>Achievements</h3>
+                <div id="badges"></div>
+            </div>
+        </div>
+        <section class="feature-card">
+            <h3>Skills Heatmap</h3>
+            <div id="heatmap"></div>
+        </section>
+        <section class="feature-card">
+            <h3>Your Active Courses</h3>
+            <div id="enrolledCourses"></div>
+        </section>
+        <button id="logout">Logout</button>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>

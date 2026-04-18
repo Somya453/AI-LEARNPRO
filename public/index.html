@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI LearnPro - Master AI Through Interactive Learning</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+    <header>
+        <div class="topbar">
+            <button id="sidebarToggle" class="hamburger" aria-label="Open sidebar">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <a href="index.html" class="brand">
+                <span class="brand-icon">🤖</span>
+                AI LearnPro
+            </a>
+            <div class="top-actions">
+                <a href="login.html" class="button">Login</a>
+                <a href="register.html" class="button primary">Start Learning</a>
+                <button id="logoutBtn" class="button">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <button id="sidebarClose" class="sidebar-close" aria-label="Close sidebar">×</button>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-item active">
+                <span class="nav-icon">🏠</span>Home
+            </a>
+            <a href="courses.html" class="nav-item">
+                <span class="nav-icon">📚</span>Courses
+            </a>
+            <a href="paths.html" class="nav-item">
+                <span class="nav-icon">🛤️</span>Learning Paths
+            </a>
+            <a href="ai.html" class="nav-item">
+                <span class="nav-icon">🧠</span>AI Quizzes
+            </a>
+            <a href="tutor.html" class="nav-item">
+                <span class="nav-icon">👨‍🏫</span>AI Tutor
+            </a>
+            <a href="community.html" class="nav-item">
+                <span class="nav-icon">👥</span>Community
+            </a>
+            <a href="analytics.html" class="nav-item">
+                <span class="nav-icon">📊</span>Analytics
+            </a>
+            <a href="dashboard.html" class="nav-item">
+                <span class="nav-icon">📈</span>Dashboard
+            </a>
+        </nav>
+    </aside>
+    <div class="backdrop" id="sidebarBackdrop"></div>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-text-line">Master AI Through</span>
+                    <span class="hero-text-line gradient-text">Interactive Learning</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Experience the future of education with AI-powered adaptive learning, gamified challenges,
+                    and personalized tutoring that evolves with your progress.
+                </p>
+                <div class="hero-actions">
+                    <a href="register.html" class="cta-button primary">
+                        <span class="button-text">Start Your Journey</span>
+                        <span class="button-icon">🚀</span>
+                    </a>
+                    <button class="cta-button secondary" onclick="startDemo()">
+                        <span class="button-text">Try Demo</span>
+                        <span class="button-icon">🎮</span>
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="50000">0</span>
+                        <span class="stat-label">Learners</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="1000">0</span>
+                        <span class="stat-label">AI Interactions</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="95">0</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="interactive-demo">
+                    <div class="demo-screen">
+                        <div class="demo-header">
+                            <div class="demo-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="demo-title">AI LearnPro - Interactive Quiz</span>
+                        </div>
+                        <div class="demo-content">
+                            <div class="question-card">
+                                <h4>What does AI stand for?</h4>
+                                <div class="options">
+                                    <div class="option" onclick="selectOption(this)">Artificial Intelligence</div>
+                                    <div class="option" onclick="selectOption(this)">Automated Integration</div>
+                                    <div class="option" onclick="selectOption(this)">Advanced Internet</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="demo-effects">
+                        <div class="particle particle-1"></div>
+                        <div class="particle particle-2"></div>
+                        <div class="particle particle-3"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose AI LearnPro?</h2>
+                <p class="section-subtitle">Cutting-edge features designed for modern learners</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card interactive-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Adaptive Learning Engine</h3>
+                    <p>Real-time quiz difficulty and personalized recommendations based on your performance, goals, and interests.</p>
+                    <div class="feature-hover-effect"></div>
+                </div>
+                <div class="feature-card interactive-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Tutor</h3>
+                    <p>Ask natural language questions, get instant explanations, and receive code debugging support.</p>
+                    <div class="feature-hover-effect"></div>
+                </div>
+                <div class="feature-card interactive-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Gamification</h3>
+                    <p>Collect badges, follow streaks, and climb leaderboards as you progress through challenges.</p>
+                    <div class="feature-hover-effect"></div>
+                </div>
+                <div class="feature-card interactive-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Progress Insights</h3>
+                    <p>Track your mastery levels, completion rates, and weak areas with rich analytics.</p>
+                    <div class="feature-hover-effect"></div>
+                </div>
+                <div class="feature-card interactive-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Community & Collaboration</h3>
+                    <p>Join study groups, participate in discussion forums, and work on real-world projects.</p>
+                    <div class="feature-hover-effect"></div>
+                </div>
+                <div class="feature-card interactive-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Accessibility</h3>
+                    <p>Designed for multilingual learners, low-connectivity environments, and inclusive study habits.</p>
+                    <div class="feature-hover-effect"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-section">
+            <div class="section-header">
+                <h2 class="section-title">Learning Adventures</h2>
+                <p class="section-subtitle">Turn learning into an exciting game</p>
+            </div>
+            <div class="game-grid">
+                <div class="game-card" onclick="startGame('ai-basics')">
+                    <div class="game-icon">🧠</div>
+                    <h3>AI Basics Quest</h3>
+                    <p>Embark on an adventure through the fundamentals of artificial intelligence</p>
+                    <div class="game-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                        <span class="progress-text">65% Complete</span>
+                    </div>
+                </div>
+                <div class="game-card" onclick="startGame('ml-challenge')">
+                    <div class="game-icon">⚡</div>
+                    <h3>ML Challenge Arena</h3>
+                    <p>Test your machine learning knowledge in this competitive challenge</p>
+                    <div class="game-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 40%"></div>
+                        </div>
+                        <span class="progress-text">40% Complete</span>
+                    </div>
+                </div>
+                <div class="game-card" onclick="startGame('code-puzzle')">
+                    <div class="game-icon">🧩</div>
+                    <h3>Code Puzzle Master</h3>
+                    <p>Solve coding puzzles and debug AI algorithms</p>
+                    <div class="game-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 80%"></div>
+                        </div>
+                        <span class="progress-text">80% Complete</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="challenge-arena">
+            <div class="challenge-panel">
+                <h2>Daily Learning Quest</h2>
+                <p>Complete today's missions to earn XP, unlock achievements, and accelerate your learning journey.</p>
+                <div class="challenge-actions">
+                    <button id="challenge-quiz" class="challenge-btn" onclick="toggleHomeChallenge('challenge-quiz')">
+                        <span class="challenge-icon">📝</span>
+                        <span class="challenge-text">Complete an AI quiz</span>
+                        <span class="challenge-reward">+50 XP</span>
+                    </button>
+                    <button id="challenge-tutor" class="challenge-btn" onclick="toggleHomeChallenge('challenge-tutor')">
+                        <span class="challenge-icon">🤖</span>
+                        <span class="challenge-text">Ask the AI Tutor</span>
+                        <span class="challenge-reward">+30 XP</span>
+                    </button>
+                    <button id="challenge-path" class="challenge-btn" onclick="toggleHomeChallenge('challenge-path')">
+                        <span class="challenge-icon">🛤️</span>
+                        <span class="challenge-text">Explore a learning path</span>
+                        <span class="challenge-reward">+40 XP</span>
+                    </button>
+                </div>
+                <div class="challenge-progress">
+                    <div class="progress-info">
+                        <span class="xp-display">Current XP: <strong>1,250</strong></span>
+                        <span class="level-display">Level 5</span>
+                    </div>
+                    <div class="challenge-track">
+                        <div id="challengeFill" class="challenge-fill"></div>
+                    </div>
+                    <p id="challengeStatus">0 / 3 missions complete</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section">
+            <div class="section-header">
+                <h2 class="section-title">What Our Learners Say</h2>
+                <p class="section-subtitle">Real experiences from the AI LearnPro community</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "AI LearnPro transformed how I learn AI. The gamification kept me engaged, and the AI tutor helped me understand complex concepts instantly."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍💻</div>
+                        <div class="author-info">
+                            <div class="author-name">Sarah Chen</div>
+                            <div class="author-title">Data Scientist</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The adaptive learning system identified my weak areas and created a personalized path. I went from beginner to confident in machine learning."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍🎓</div>
+                        <div class="author-info">
+                            <div class="author-name">Marcus Rodriguez</div>
+                            <div class="author-title">ML Engineer</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "The community features and collaborative projects made learning social and fun. I made great connections while mastering AI concepts."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍🔬</div>
+                        <div class="author-info">
+                            <div class="author-name">Dr. Priya Patel</div>
+                            <div class="author-title">AI Researcher</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>

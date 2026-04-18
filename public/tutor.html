@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tutor - AI LearnPro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="topbar">
+            <button id="sidebarToggle" class="hamburger" aria-label="Open sidebar">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <a href="index.html" class="brand">AI LearnPro</a>
+            <div class="top-actions">
+                <a href="login.html" class="button">Login</a>
+                <a href="register.html" class="button primary">Register</a>
+                <button id="logoutBtn" class="button">Logout</button>
+            </div>
+        </div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <button id="sidebarClose" class="sidebar-close" aria-label="Close sidebar">×</button>
+        <nav class="sidebar-nav">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="paths.html">Learning Paths</a>
+            <a href="ai.html">AI Learning</a>
+            <a href="tutor.html">AI Tutor</a>
+            <a href="community.html">Community</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+    </aside>
+    <div class="backdrop" id="sidebarBackdrop"></div>
+    <main>
+        <section class="hero">
+            <h2>Natural Language AI Tutor</h2>
+            <p>Ask questions, debug code, and get step-by-step explanations in plain English.</p>
+        </section>
+        <div id="chat-messages"></div>
+        <div class="chat-row">
+            <input type="text" id="chat-input" placeholder="Ask: explain backpropagation step by step">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        <section class="grid">
+            <div class="feature-card">
+                <h3>Code Debugging</h3>
+                <p>Paste code ideas and get instant feedback to fix errors.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Topic Walkthroughs</h3>
+                <p>Receive guided explanations for tough AI concepts and algorithms.</p>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>

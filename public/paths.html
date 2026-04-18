@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Paths - AI LearnPro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="topbar">
+            <button id="sidebarToggle" class="hamburger" aria-label="Open sidebar">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <a href="index.html" class="brand">AI LearnPro</a>
+            <div class="top-actions">
+                <a href="login.html" class="button">Login</a>
+                <a href="register.html" class="button primary">Register</a>
+                <button id="logoutBtn" class="button">Logout</button>
+            </div>
+        </div>
+    </header>
+    <aside class="sidebar" id="sidebar">
+        <button id="sidebarClose" class="sidebar-close" aria-label="Close sidebar">×</button>
+        <nav class="sidebar-nav">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="paths.html">Learning Paths</a>
+            <a href="ai.html">AI Learning</a>
+            <a href="tutor.html">AI Tutor</a>
+            <a href="community.html">Community</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="dashboard.html">Dashboard</a>
+        </nav>
+    </aside>
+    <div class="backdrop" id="sidebarBackdrop"></div>
+    <main>
+        <section class="hero">
+            <h2>Personalized Learning Paths</h2>
+            <p>Adaptive recommendations that move you from beginner to advanced in the right pace.</p>
+        </section>
+        <div class="feature-card">
+            <h3 id="recommendedPath">Recommended Path: Machine Learning Fundamentals</h3>
+            <p>Dynamic learning paths adjust in real time as you complete quizzes and projects.</p>
+        </div>
+        <div class="grid">
+            <div class="feature-card">
+                <h3>Career Focus</h3>
+                <p>Build paths for AI research, data science, or software engineering with real-world projects.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Exam Preparation</h3>
+                <p>Adaptive exams and practice tests for certifications like TCS-NQT and AWS.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Skill Builder</h3>
+                <p>Focus on weak areas with targeted modules, flashcards, and case studies.</p>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>
